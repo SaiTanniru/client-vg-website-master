@@ -1,0 +1,12 @@
+@import '../../variables';
+
+.History {
+	&_head {
+		@include big-container;
+		padding: 4rem $gutter 0;
+
+		h1 {
+			text-align: center;
+		}
+	}
+}

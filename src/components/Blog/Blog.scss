@@ -1,0 +1,55 @@
+@import '../../variables';
+
+.Blog {
+	@include big-container;
+	padding: 2rem $gutter 4rem;
+	
+	&_list {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+
+		&_post {
+			margin-top: 2rem;
+			display: flex;
+			flex-direction: column;
+			color: $color-text;
+
+			&_img {
+				padding-top: 50%;
+				background-size: cover;
+				background-position: center center;
+				background-repeat: no-repeat;
+			}
+			&_date {
+				margin-top: 0.74rem;
+				font-size: $fs-small;
+				color: $color-gray-7;
+				text-transform: uppercase;
+			}
+			&_title {
+				@include h2;
+				margin-top: 0.25rem;
+				line-height: 1.1;
+				transition: color 0.2s;
+			}
+
+			&:hover &_title {
+				color: $color-link;
+
+			}
+		}
+		
+		&_post, &_spacer {
+			@include column-width(3, 2rem);
+			
+			@media (max-width: $screen-small) {
+				@include column-width(2, 2rem);
+			}
+
+			@media (max-width: $screen-xsmall) {
+				width: 100%;
+			}
+		}
+	}
+}

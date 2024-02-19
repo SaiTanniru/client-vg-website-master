@@ -1,0 +1,71 @@
+@import '../../variables';
+
+.News {
+	padding: 4rem $gutter;
+
+	&_body {
+		margin: 0 auto;
+		max-width: $screen-medium;
+
+		display: flex;
+		align-items: flex-start;
+
+		@media (max-width: 730px) {
+			flex-direction: column;
+
+			&_tabs {
+				width: 100%;
+			}
+
+			&_panel {
+				margin-top: 1.5rem;
+			}
+		}
+
+		&_tabs {
+			min-width: 235px;
+			border-radius: 6px;
+			border: 1px solid $color-border;
+			margin-right: $gutter;
+
+			&_btn {
+				cursor: pointer;
+				text-align: left;
+				width: 100%;
+				box-shadow: none;
+				display: block;
+				background: none;
+				color: $color-link;
+				border: none;
+				padding: 1rem 1.5rem;
+
+				&:not(:first-child) {
+					border-top: 1px solid $color-border;
+				}
+
+				&--active {
+					color: $color-text;
+				}
+			}
+		}
+
+		&_panel {
+			flex: 1;
+
+			h3 {
+				margin-top: 0;
+			}
+
+			ul {
+				margin: 1rem 0 0 0;
+				padding: 0;
+			}
+
+			li {
+				margin: 0.5rem 0 0 0;
+				list-style: none;
+				padding: 0;
+			}
+		}
+	}
+}

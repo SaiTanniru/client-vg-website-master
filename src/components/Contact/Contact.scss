@@ -1,0 +1,64 @@
+@import '../../variables';
+
+.Contact {
+	background-color: #A0A0A0;
+	background-position: top center;
+	background-repeat: no-repeat;
+	background-size: 100% auto;
+	padding: $gutter 0;
+	display: flex;
+	justify-content: center;
+	flex-grow: 1;
+
+	&_wrap {
+		width: $screen-medium;
+		background: #fff;
+		font-size: 16px;
+		display: flex;
+		align-self: center;
+
+		@media (max-width: $screen-small) {
+			flex-direction: column;
+		}
+	}
+
+	&_body {
+		padding: $gutter;
+	}
+
+	&_body, &_map {
+		flex: 1;
+	}
+
+	&_map {
+		min-height: 490px;
+		position: relative;
+
+		img {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+
+	input, textarea {
+		border: none;
+		border-radius: 0;
+		width: 100%;
+		margin-bottom: 1rem;
+		padding: 0.2em 0;
+		font-size: 16px;
+	}
+
+	input {
+		border-bottom: 1px solid $color-gray-4;
+	}
+
+	button {
+		width: 100%;
+		font-size: 16px;
+	}
+}

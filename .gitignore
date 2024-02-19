@@ -1,0 +1,7 @@
+/node_modules
+npm-debug.log
+dist
+config.local.json
+.idea
+./build/manifest.json
+/build

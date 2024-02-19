@@ -1,0 +1,82 @@
+@import '../../variables';
+
+.Bio {
+	padding: $gutter;
+	background: #fff;
+	display: flex;
+	align-items: flex-start;
+	margin-bottom: 1.5rem;
+
+	@media (max-width: $screen-small) {
+		display: block;
+
+		&_pic {
+			float: left;
+			margin: 0 1.5rem 1.5rem 0;
+		}
+	}
+
+	&_pic {
+		margin-right: 1.5rem;
+		width: 40%;
+		display: block;
+
+		img {
+			display: block;
+		}
+
+		&_cred {
+			margin-top: 1.5rem;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			color: $color-green;
+			text-transform: uppercase;
+			font-size: 12px;
+
+			@media (max-width: 550px) {
+
+				svg {
+					display: none;
+				}
+			}
+
+			svg {
+				margin-right: 0.5rem;
+				font-size: 1.8em;
+			}
+		}
+	}
+
+	&_body {
+		flex: 1;
+
+		&_header {
+			display: flex;
+			justify-content: space-between;
+			
+			&_icons {
+				text-align: right;
+			}
+		}
+	}
+
+
+	&_icon {
+		line-height: 1;
+		margin-left: 1rem;
+		display: inline-block;
+
+		svg {
+			fill: $color-green;
+			height: 26px;
+		}
+	}
+
+	&_name {
+		@include h3;
+		color: $color-green;
+		margin-bottom: 0.5rem;
+		text-transform: uppercase;
+	}
+}

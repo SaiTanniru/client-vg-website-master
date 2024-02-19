@@ -1,0 +1,88 @@
+@import '../../variables';
+
+.Page {
+	margin: 0 auto;
+	padding: 4rem;
+	width: 100%;
+	max-width: $screen-medium;
+}
+
+
+#howVideo {
+	width: 100%;
+	object-fit: cover;
+	margin-bottom: 30px;
+}
+
+.How {
+	&_img {
+		padding: $gutter;
+		margin-bottom: 3rem;
+
+		img {
+			margin: 0 auto;
+			display: block;
+		}
+	}
+
+	&_blurb {
+		border-top: 1px solid $color-green;
+		border-bottom: 1px solid $color-green;
+		padding: 1rem $gutter;
+		margin: 0 auto 3rem;
+		max-width: $screen-small;
+	}
+
+	&_headline {
+		@include h3;
+		text-align: center;
+		margin-bottom: 3rem;
+		text-transform: uppercase;
+	}
+}
+
+.TakeAways {
+	&_item {
+		display: flex;
+		margin-bottom: 1.5rem;
+
+		@media (max-width: $screen-small) {
+			flex-direction: column;
+		}
+
+		@media (min-width: $screen-small+1) {
+			&_name {
+				width: 240px;
+				flex-shrink: 0;
+				display: flex;
+				align-items: center;
+				justify-content: flex-end;
+				text-align: right;
+			}
+		}
+
+		&_name {
+			background-color: $color-gray-7;
+			color: $color-green;
+			padding: 1.5rem;
+			@include h4;
+		}
+
+		&_points {
+			padding: 1.5rem;
+			flex: 1;
+			background-color: $color-gray-6;
+			color: #fff;
+
+			ul {
+				margin: 0;
+				padding: 1rem;
+			}
+
+			li {
+				margin: 0 0 0.5rem 0;
+				padding: 0;
+			}
+		}
+	}
+}

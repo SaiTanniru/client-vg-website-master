@@ -1,0 +1,310 @@
+@import '../../variables';
+
+/* Reset */
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+*:focus, a:focus {
+	outline: none;
+}
+
+body {
+  margin: 0;
+}
+
+img {
+	max-width: 100%;
+}
+
+textarea { // Remove the default vertical scrollbar in IE.
+	overflow: auto;
+}
+
+hr { // IE
+	overflow: visible;
+}
+
+input, textarea, select, button, html {
+	@include default-font-size;
+	line-height: 1.5;
+	font-family: $font-family-default;
+}
+
+svg:not(:root) { // Hide the overflow in IE.
+	overflow: hidden;
+}
+
+[hidden] { // IE10
+	display: none !important;
+}
+
+/* End Reset */
+
+[data-focused]:focus {
+	outline: $color-blue solid 2px;
+}
+
+[disabled] {
+	opacity: 0.4;
+	user-select: none;
+	pointer-events: none;
+}
+
+[role='button'] {
+	user-select: none;
+	display: inline-block;
+}
+
+:invalid {
+	box-shadow: none;
+	outline: none;
+}
+
+.validate {
+	:invalid, :invalid:focus {
+		outline: $color-red solid 1px;
+		outline-offset: 0;
+	}
+}
+
+html {
+	height: 100%;
+	background: #fff;
+}
+
+body {
+	min-height: 100%;
+	color: $color-text;
+}
+
+h1 {
+	@include h1;
+	font-weight: normal;
+	margin: 0 0 $margin-block 0;
+	// text-transform: uppercase;
+}
+h2 { 
+	@include h2;
+	font-weight: normal;
+	margin: 0 0 $margin-block 0;
+	// text-transform: uppercase;
+}
+h3 { 
+	@include h3;
+	font-weight: normal;
+	margin: 0 0 $margin-block 0;
+	// text-transform: uppercase;
+}
+h4 { 
+	@include h4;
+	font-weight: bold;
+	margin: 0 0 1rem 0;
+	// text-transform: uppercase;
+}
+
+small {
+	font-size: $fs-small;
+}
+
+hr {
+	margin: 0 0 $margin-block;
+	height: 1px;
+	background: $color-border;
+	border: none;
+}
+
+a, .link {
+	color: $color-link;
+	text-decoration: none;
+}
+
+ul, ol {
+	list-style-position: outside;
+	padding-left: 1.2rem;
+}
+
+p,
+ul,
+ol,
+pre,
+fieldset,
+figure,
+table {
+	margin: 0 0 $margin-block 0;
+}
+
+table {
+	width: 100%;
+	border-collapse:collapse;
+	border-spacing:0;
+}
+
+td, th {
+	border-width: 1px;
+	padding: 12px;
+	vertical-align: top;
+}
+
+th {
+	white-space: nowrap;
+	text-align: left;
+	background: $color-gray-0;
+	font-weight: normal;
+	vertical-align: middle;
+}
+
+td {
+	background: #fff;
+}
+
+::placeholder {
+	opacity: 0.5;
+}
+
+:focus::placeholder {
+	opacity: 0.4;
+}
+
+textarea {
+	width: 100%;
+	height: 6em;
+}
+
+option {
+	padding: 5px;
+}
+
+@keyframes BusyButton {
+	from {transform: rotate(0deg);}
+	to {transform: rotate(359deg);}
+}
+
+button {
+	@include button;
+}
+
+input[type='submit'], .submit-button {
+	@include button;
+	color: #fff;
+	background-color: $color-green;
+}
+
+[data-is-busy] {
+	cursor: default;
+	pointer-events: none;
+	position: relative;
+	overflow: hidden;
+
+	&:before {
+		content: '';
+		display: block;
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background-color: inherit;
+		background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3));
+		z-index: 1;
+	}
+
+	&:after {
+		$size: 20px;
+
+		color: #fff;
+		opacity: 0.7;
+		content: '';
+		display: block;
+		width: $size;
+		height: $size;
+		border-radius: 100%;
+		border: 3px solid transparent;
+		border-bottom-color: currentColor;
+		border-left-color: currentColor;
+		border-right-color: currentColor;
+		animation: BusyButton .8s infinite linear;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		margin-left: -$size/2;
+		margin-top: -$size/2;
+		z-index: 1;
+	}
+}
+
+address {
+	font-style: normal;
+}
+
+label {
+	font-weight: normal;
+	user-select: none;
+}
+
+input, select, textarea {
+	background: transparent;
+	// font-size: 16px; // Font-size needs to be a minimum of 16px to keep mobile Safari from zooming in on focus.
+	font-size: 1rem;
+	vertical-align: middle;
+	outline: none;
+	border: 1px solid $color-border;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="number"],
+input[type="tel"],
+input[type="url"],
+textarea {
+	min-height: 34px;
+	padding: 7px 8px;
+	border-radius: $border-radius;
+
+	&.focus,
+	&:focus {
+		border-color: #51a7e8;
+		outline: none;
+	}
+}
+	
+select {
+	height: 36px;
+	appearance: none;
+	background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTc5MiIgaGVpZ2h0PSIxNzkyIiB2aWV3Qm94PSIwIDAgMTc5MiAxNzkyIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGQ9Ik0xNDA4IDcwNHEwIDI2LTE5IDQ1bC00NDggNDQ4cS0xOSAxOS00NSAxOXQtNDUtMTlsLTQ0OC00NDhxLTE5LTE5LTE5LTQ1dDE5LTQ1IDQ1LTE5aDg5NnEyNiAwIDQ1IDE5dDE5IDQ1eiIvPjwvc3ZnPg==);
+	background-size: 14px, 100%;
+	background-position: calc(100% - 4px) 50%, 0 0;
+	background-repeat: no-repeat;
+	border-radius: $border-radius;
+	padding: 0 22px 0 8px;
+
+}
+
+select::-ms-expand { // Removes default drop-down arrow in IE.
+    display: none;
+}
+
+img[data-img-loading] {
+	background: $color-gray-0 center center no-repeat;
+	background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiIHdpZHRoPSI0NS41MzlweCIgaGVpZ2h0PSIxMS42NjZweCIgdmlld0JveD0iMCAwIDQ1LjUzOSAxMS42NjYiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDQ1LjUzOSAxMS42NjYiIHhtbDpzcGFjZT0icHJlc2VydmUiPjxjaXJjbGUgb3BhY2l0eT0iMC4xIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3ICAgICIgY3g9IjUuODMzIiBjeT0iNS44MzMiIHI9IjUuODMzIi8+PGNpcmNsZSBvcGFjaXR5PSIwLjEiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgICAgIiBjeD0iMjIuNzcxIiBjeT0iNS44MzMiIHI9IjUuODMzIi8+PGNpcmNsZSBvcGFjaXR5PSIwLjEiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgICAgIiBjeD0iMzkuNzA2IiBjeT0iNS44MzMiIHI9IjUuODMzIi8+PC9zdmc+);
+}
+img[data-img-error] {
+	background: $color-gray-0 center center / contain no-repeat;
+}
+
+.Root {
+	display: flex;
+	flex-direction: column; // Needed a wrapping flex element to fix IE11 min-height+flexbox problem
+
+	&_body {
+		min-width: $screen-min-width;
+		min-height: 100vh;
+		background: #fff;
+		display: flex;
+		flex-direction: column;
+	}
+}

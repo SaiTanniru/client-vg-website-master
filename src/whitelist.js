@@ -1,0 +1,35 @@
+export default {
+	p: {},
+	a: {
+		href: true,
+		target: '_blank'
+	},
+	h1: {},
+	h2: {},
+	h3: {},
+	h4: {},
+	div: {},
+	table: {},
+	td: {},
+	tr: {},
+	thead: {},
+	tbody: {},
+	strong: {},
+	em: {},
+	b: {},
+	i: {},
+	ul: {},
+	ol: {},
+	li: {},
+	strike: {},
+	blockquote: {},
+	br: {},
+	hr: {},
+	img: {
+		src: true,
+		alt: true,
+	},
+	iframe: {
+		src: true,
+	},
+};

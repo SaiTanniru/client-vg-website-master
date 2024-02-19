@@ -1,0 +1,149 @@
+@import '../../variables';
+
+.listings-slider-container {
+  height: calc(100vh - #{$header-height});
+  position: relative;
+
+  .listing-slides {
+    position: relative;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    flex-grow: 1;
+    height: 100%;
+
+    .listing-slide {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-width: 100%;
+      max-width: 100%;
+      height: 100%;
+      opacity: 0;
+      z-index: 0;
+      transition: opacity 0.5s;
+
+      &.active {
+        opacity: 1;
+        z-index: 1;
+      }
+
+      .listings-slider-img {
+        width: 100vw;
+        height: 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+
+      .listings-slider-overlay {
+        background-color: black;
+        opacity: 0.5;
+        width: 100vw;
+        height: 100%;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        z-index: 1;
+      }
+
+      .listings-slider-description {
+        position: absolute;
+        font-family: $font-family-medium;
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .listings-slider-description-name {
+          font-size: 45px;
+        }
+
+        .listings-slider-description-city {
+          font-size: 36px;
+        }
+
+        a {
+          color: white;
+        }
+      }
+    }
+  }
+
+  .listings-slider-arrow {
+    position: absolute;
+    top: calc(50% - #{$arrow-height} / 2);
+    z-index: 2;
+    margin: 0 $margin-xsmall;
+    cursor: pointer;
+    line-height: 0;
+
+    &.right {
+      right: 0;
+    }
+
+    &.left {
+      left: 0;
+      transform: rotate(180deg);
+    }
+
+    .Icon svg {
+      fill: white;
+      width: $arrow-height;
+      height: $arrow-height;
+    }
+  }
+
+  @media (max-width: $screen-medium) {
+    height: calc(100vh - #{$header-height-big});
+
+    .listing-slides .listing-slide .listings-slider-description {
+      .listings-slider-description-name {
+        font-size: 36px;
+      }
+      .listings-slider-description-city {
+        font-size: 28px;
+      }
+    }
+  }
+
+  @media (max-width: $screen-small) {
+    .listing-slides .listing-slide .listings-slider-description {
+      .listings-slider-description-name {
+        font-size: 22px;
+      }
+      .listings-slider-description-city {
+        font-size: 16px;
+      }
+    }
+
+    .listings-slider-arrow {
+      top: calc(50% - #{$arrow-height-medium} / 2);
+
+      .Icon svg {
+        width: $arrow-height-medium;
+        height: $arrow-height-medium;
+      }
+    }
+  }
+
+  @media (max-width: $screen-xsmall) {
+    .listing-slides .listing-slide .listings-slider-description {
+      .listings-slider-description-name {
+        font-size: 16px;
+      }
+      .listings-slider-description-city {
+        font-size: 12px;
+      }
+    }
+
+    .listings-slider-arrow {
+      top: calc(50% - #{$arrow-height-small} / 2);
+
+      .Icon svg {
+        width: $arrow-height-small;
+        height: $arrow-height-small;
+      }
+    }
+  }
+}

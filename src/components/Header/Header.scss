@@ -1,0 +1,102 @@
+@import '../../variables';
+
+.Header {
+	background-color: #EBE9EF;
+	background-repeat: repeat;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	border-bottom: 4px solid $color-green;
+	flex-shrink: 0;
+	width: 100%;
+	position: sticky;
+	position: -webkit-sticky;
+	z-index: 10000000;
+	top: 0;
+
+	&_logo {
+		display: block;
+		flex-shrink: 0;
+		padding: 1rem $gutter 1.2rem;
+
+		img {
+			margin: 0;
+			display: block;
+		}
+	}
+
+	&_nav {
+		padding: 0.8rem $gutter;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		user-select: none;
+		font-size: 16px;
+
+		&_link {
+			color: #a0a0a0;
+			text-transform: uppercase;
+			position: relative;
+			cursor: pointer;
+			padding: 0.4em 1em;
+			transition: color 0.5ms;
+
+			&:before {
+				position: absolute;
+				top: 50%;
+				left: 0;
+				height: 3px;
+				background: $color-green;
+				content: "";
+				z-index: -1;
+				margin-top: -2px;
+				width: 0;
+			}
+
+
+			&_drop {
+				position: absolute;
+				top: 100%;
+				left: 0;
+				background-color: #EBE9EF;
+				background-repeat: repeat;
+				display: none;
+				z-index: $z-drop;
+			}
+
+			&--current, &:hover, &:focus, &--hov {
+				font-weight: bold;
+				color: black;
+				&:before {
+					transform: scale(1);
+					width: 100%;
+				}
+			}
+
+			&:hover &_drop, &:focus &_drop {
+				display: flex;
+				flex-direction: column;
+			}
+		}
+	}
+
+	@media (max-width: $screen-medium) {
+		flex-direction: column;
+
+		&_nav {
+			padding: 0 calc(#{$gutter} - 0.5em) 0.6rem calc(#{$gutter} - 0.5em);
+			width: 100%;
+			font-size: 12px;
+
+			&_link {
+				padding: 0.4em 0.5em;
+			}
+		}
+	}
+
+	@media (max-width: $screen-xsmall) {
+		&_nav {
+			padding: 0 0.75rem 0.6rem 0.75rem;
+		}
+	}
+}

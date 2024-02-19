@@ -1,0 +1,21 @@
+@import '../../variables';
+
+.Footer {
+	padding: 2rem 0;
+	background-color: $color-brand-gray;
+	background-repeat: repeat;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	flex-shrink: 0;
+	color: #fff;
+	text-align: center;
+	justify-content: center;
+	margin-top: auto;
+
+	&_link {
+		color: #fff;
+		padding: 0px 5px 0px 5px;
+		white-space: nowrap;
+	}
+}

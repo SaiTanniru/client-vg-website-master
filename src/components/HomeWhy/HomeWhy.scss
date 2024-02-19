@@ -1,0 +1,13 @@
+@import '../../variables';
+
+.HomeWhy {
+	color: #fff;
+	background-color: #2A2A2A;
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+
+	&_wrap {
+		background-color: rgba(50,50,50,0.8);
+	}
+}

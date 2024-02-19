@@ -1,0 +1,22 @@
+@import '../../variables';
+
+.PropertyStats {
+	white-space: nowrap;
+	margin-bottom: 1rem;
+
+	dl {
+		display: block;
+		margin: 0;
+
+		dt {
+			color: $color-gray-6;
+			display: inline-block;
+			margin: 0 0.5rem 0 0;
+		}
+
+		dd {
+			margin: 0;
+			display: inline-block;
+		}
+	}
+}

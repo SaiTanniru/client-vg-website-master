@@ -1,0 +1,38 @@
+"<!--#begin-header:
+Please be sure to check the documentation when modifying this file.
+
+Notes:
+1) Data structure changes are not allowed unless the tag #table-editable is set to 1. Note, this tag is for 
+informational purposes only. Whether actual changes are allowed or not are set through the application.
+
+2) If data structure changes are allowed, all modifications will be validated on next upload. Otherwise, if any
+changes are detected to the data structure, the update will be rejected.
+
+3) Data structure recreation is not allowed unless the tag #structure-recreate is set to 1. Note, this tag is for 
+informational purposes only. Whether actual changes are allowed or not are set through the application.
+
+#table-header:name,code,alias,typeCode,readAccessTypeCode,writeAccessTypeCode
+#table:News,News,News,dynamic,public,protected
+#structure-editable:0
+#structure-recreate:1
+#column-header:name,typeCode,length,unique,precision,scale
+#column:TITLE,varchar,128,0,,
+#column:URL,text,,0,,
+#column:SOURCE_NAME,varchar,128,0,,
+#column:SOURCE_URL,text,,0,,
+#column:DATE,varchar,128,0,,
+#data-delimiter:,
+
+#data-format:csv
+
+If set to 1, this tag will clear all existing data before importing. Note, the user importing this file must have the
+appropriate permissions otherwise this will return an error.
+#clear-all-data:1
+
+Modify the data below the following line as desired.
+#begin-data:-->"
+TITLE,URL,SOURCE_NAME,SOURCE_URL,DATE
+"Pierson Retail Advisors Mergers with Vitorinon Group","http://www.piersonretailadvisors.com/wp-content/uploads/2015/06/Why-these-2-longtime-real-estate-brokers-wanted-to-set-up-a-new-Dallas-boutique-firm-Dallas-Business-Journal.pdf","Dallas Business Journal","","2017-02-15"
+"Strive Merger Announcement","http://www.piersonretailadvisors.com/wp-content/uploads/2015/06/Strive-Merger-eBlast-Announcement.pdf","","","2017-02-15"
+"Pierson Retail Advisors Mergers with Vitorinon Group","http://www.piersonretailadvisors.com/wp-content/uploads/2015/06/Texas-Real-Estate-Business.pdf","Texas Real Estate Business","","2017-02-14"
+"Pierson Retail Advisors Negotiates Sale of 315,725 SF Outlet Mall in Gainesville","http://www.piersonretailadvisors.com/wp-content/uploads/2015/06/Texas-Real-Estate-Business-1.3.17.pdf","Texas Real Estate Business","","2017-01-03"

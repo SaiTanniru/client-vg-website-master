@@ -1,0 +1,54 @@
+@import '../../variables';
+
+.Slider {
+	display: flex;
+	align-items: center;
+	padding: 0 1rem;
+
+	&_btn {
+		padding: 0.8rem;
+		background: none;
+		border: none;
+		box-shadow: none;
+		flex-shrink: 0;
+
+		font-size: 25px;
+		color: #fff;
+		opacity: 0.25;
+		transition: opacity 0.2s;
+		cursor: pointer;
+
+		&--prev {
+			margin-left: -1rem;
+		}
+		&--next {
+			margin-right: -1rem;
+		}
+
+		&:hover {
+			opacity: 1;
+		}
+	}
+
+	&_slides {
+		display: flex;
+		align-items: center;
+		position: relative;
+		margin: 0 1rem;
+		overflow: hidden;
+		flex-grow: 1;
+
+		&_item {
+			min-width: 100%;
+			max-width: 100%;
+			opacity: 0;
+			z-index: 0;
+			transition: opacity 0.5s;
+
+			&--active {
+				opacity: 1;
+				z-index: 1;
+			}
+		}
+	}
+}

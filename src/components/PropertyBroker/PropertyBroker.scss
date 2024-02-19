@@ -1,0 +1,14 @@
+@import '../../variables';
+
+.PropertyBroker {
+	&_name {
+		@include h4;
+		text-transform: uppercase;
+		color: $color-green;
+	}
+
+	&_btn {
+		@include button;
+		margin-top: 1rem;
+	}
+}

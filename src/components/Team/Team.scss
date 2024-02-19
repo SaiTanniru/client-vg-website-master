@@ -1,0 +1,118 @@
+@import '../../variables';
+
+.Team {
+	&_photos {
+		&_contain {
+			padding: $gutter;
+			margin: 0 auto;
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+			max-width: $screen-medium;
+		}
+
+		&_item, &_spacer {
+			width: calc(100% / 3 - 20px / 3);
+		}
+		
+		&_item {
+			margin-bottom: 10px;
+			min-height: 200px;
+
+			@media (max-width: $screen-small) {
+				width: calc(100% / 2 - 5px);
+			}
+
+			@media (max-width: $screen-xsmall) {
+				width: 100%;
+			}
+
+			background-position: top center;
+			background-repeat: no-repeat;
+			background-color: #E1E2E6;
+			background-size: cover;
+			display: flex;
+
+			&_body {
+				flex: 1;
+				background: rgba(0,0,0,0.7);
+				text-align: center;
+				padding: $gutter;
+				opacity: 0;
+				transition: 0.1s opacity;
+				display: flex;
+				flex-direction: column;
+				justify-content: flex-end;
+
+				&:hover {
+					opacity: 1;
+				}
+			}
+
+			&_name {
+				color: #fff;
+				@include h3;
+				text-transform: uppercase;
+			}
+
+			&_role {
+				color: $color-green;
+				text-transform: uppercase;
+			}
+		}
+	}	
+
+	&_bios {
+		background: #DADADA;
+
+		&_contain {
+			padding: $gutter 0;
+			margin: 0 auto;
+			max-width: $screen-medium;
+		}
+	}
+
+	&_joinOurTeam {
+		text-align: center;
+		width: calc(100% / 3 - 20px / 3 - 20px * 2);
+		margin: 20px 20px 30px;
+		padding: 25px 0;
+		min-height: 200px;
+		background-color: $color-green;
+		color: white;
+		font-size: 50px;
+		font-weight: bold;
+		line-height: 50px;
+		word-spacing: 60px;
+		cursor: pointer;
+		transform: rotate(0deg);
+		transition: transform 0.3s ease-out;
+
+		&:hover {
+			padding: 50px 0;
+			transition: transform 0.3s ease-in;
+			transform: rotate(10deg);
+		}
+
+		@media (max-width: $screen-small) {
+			width: calc(100% / 2 - 5px - 20px * 2);
+			word-spacing: 100px;
+			font-size: 40px;
+		}
+
+		@media (max-width: $screen-xsmall) {
+			width: 100%;
+			word-spacing: 170px;
+		}
+	}
+
+	.margin {
+		padding-top: 67px;
+		margin-top: -67px;
+
+		@media (max-width: $screen-medium) {
+			padding-top: 98px;
+			margin-top: -98px;
+		}
+	}
+}

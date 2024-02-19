@@ -1,0 +1,9 @@
+{
+	"presets": ["react", "env"],
+	"plugins": ["transform-class-properties", "transform-object-assign", "transform-object-rest-spread"],
+	"env": {
+		"development": {
+			"plugins": ["transform-react-jsx-source"]
+		}
+	}
+}

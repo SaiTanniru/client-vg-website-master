@@ -1,0 +1,32 @@
+@import '../../variables';
+
+.PropertyContact {
+	margin-top: 1rem;
+	display: flex;
+	align-items: flex-start;
+
+	&_name {
+		@include h4;
+		text-transform: uppercase;
+		color: $color-green;
+	}
+
+	&_phone {
+		margin-bottom: 1rem;
+		color: $color-gray-6;
+	}
+
+	&_img {
+		width: 100px;
+		display: block;
+		margin-right: 1rem;
+	}
+
+	&_body {
+		flex: 1;
+	}
+
+	&_btn {
+		@include button;
+	}
+}

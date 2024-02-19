@@ -1,0 +1,24 @@
+@import '../../variables';
+
+.Cycle {
+	display: flex;
+	width: 100%;
+
+	&_item {
+		opacity: 0;
+		min-width: 100%;
+		transition: 0.8s opacity;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		&--is-active {
+			opacity: 1;
+			z-index: 1;
+		}
+
+		&_body {
+			max-width: 1020px;
+		}
+	}
+}

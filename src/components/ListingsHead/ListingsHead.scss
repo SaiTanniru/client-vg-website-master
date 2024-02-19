@@ -1,0 +1,80 @@
+@import '../../variables';
+
+.ListingsHead {
+	padding-bottom: $gutter;
+
+	&_title {
+		@include h1;
+		text-transform: uppercase;
+		text-align: center;
+		margin-bottom: 1rem;
+	}
+
+	&_toggle {
+		display: flex;
+		justify-content: center;
+
+		&_btn {
+			@include button;
+			@include h3;
+			padding: 0.8rem 1.5rem;
+			text-transform: uppercase;
+			cursor: pointer;
+		}
+	}
+
+	&_nav {
+		display: flex;
+		justify-content: space-between;
+		margin: 0 auto;
+		font-size: 16px;
+		flex-wrap: wrap;
+		max-width: 40em;
+
+		@media (max-width: $screen-small) {
+			font-size: 13px;
+		}
+
+		@media (max-width: 33em) {
+			flex-direction: column;
+			justify-content: flex-start;
+		}
+
+		&_item {
+			display: flex;
+			margin-bottom: 1rem;
+			// align-items: center;
+			// text-align: center;
+
+			&_input {
+				margin-right: 0.25em;
+				margin-top: -0.1em;
+			}
+
+
+			&_link {
+				flex-grow: 1;
+				text-transform: uppercase;
+				display: block;
+				white-space: nowrap;
+				color: $color-text;
+
+				&.is-active {
+					color: $color-green;
+				}
+
+				&:hover {
+					color: $color-green;
+				}
+			}
+
+			&_map {
+				color: $color-mute;
+
+				&:hover {
+					color: $color-green;
+				}
+			}
+		}
+	}
+}

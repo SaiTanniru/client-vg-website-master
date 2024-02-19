@@ -1,0 +1,59 @@
+@import '../../variables';
+
+.Testimonials {
+	&_wrap {
+		@include big-container;
+		padding: $gutter 0;
+	}
+
+	&_item {
+		display: flex;
+
+		&_photo {
+			margin-right: 3rem;
+			min-width: 165px;
+			max-width: 165px;
+
+			img {
+				display: block;
+				max-width: 100%;
+			}
+		}
+
+		&_body {
+			blockquote {
+				padding: 0;
+				margin: 0;
+				@include h2;
+			}
+
+			footer {
+				margin-top: $gutter;
+			}
+		}
+
+		@media (max-width: $screen-medium) {
+			&_body {
+				blockquote {
+					@include h4;
+				}
+			}
+		}
+
+		@media (max-width: $screen-small) {
+			flex-direction: column;
+
+			&_photo {
+				margin: 0 auto $gutter;
+			}
+			
+			&_body {
+				width: 100%;
+
+				blockquote {
+					@include default-font-size;
+				}
+			}
+		}
+	}
+}

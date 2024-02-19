@@ -1,0 +1,37 @@
+"<!--#begin-header:
+Please be sure to check the documentation when modifying this file.
+
+Notes:
+1) Data structure changes are not allowed unless the tag #table-editable is set to 1. Note, this tag is for
+informational purposes only. Whether actual changes are allowed or not are set through the application.
+
+2) If data structure changes are allowed, all modifications will be validated on next upload. Otherwise, if any
+changes are detected to the data structure, the update will be rejected.
+
+3) Data structure recreation is not allowed unless the tag #structure-recreate is set to 1. Note, this tag is for
+informational purposes only. Whether actual changes are allowed or not are set through the application.
+
+#table-header:name,code,alias,typeCode,readAccessTypeCode,writeAccessTypeCode
+#table:Website Users Dev,WEBSITE_USERS_DEV,WEBSITE_USERS_DEV,dynamic,public,public
+#structure-editable:0
+#structure-recreate:1
+#column-header:name,typeCode,length,unique,precision,scale
+#column:EMAIL,varchar,128,1,,
+#column:FIRST_NAME,varchar,128,0,,
+#column:LAST_NAME,varchar,128,0,,
+#column:COMPANY_NAME,varchar,128,0,,
+#column:IS_PRINCIPAL,varchar,1,0,,
+#column:IS_BROKER,varchar,1,0,,
+#column:PHONE,varchar,128,0,,
+#column:PACKAGES_ID,varchar,2048,0,,
+#data-delimiter:,
+
+#data-format:csv
+
+If set to 1, this tag will clear all existing data before importing. Note, the user importing this file must have the
+appropriate permissions otherwise this will return an error.
+#clear-all-data:1
+
+Modify the data below the following line as desired.
+#begin-data:-->"
+EMAIL,FIRST_NAME,LAST_NAME,COMPANY_NAME,IS_PRINCIPAL,IS_BROKER,PHONE,PACKAGES_ID

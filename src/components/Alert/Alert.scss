@@ -1,0 +1,27 @@
+@import '../../variables';
+
+.Alert {
+	padding: 10px;
+	border-radius: $border-radius;
+	border-width: 1px;
+	display: block;
+	margin-top: 0.5rem;
+
+	&--success {
+		color: #246;
+		background-color: #e2eef9;
+		border-color: #bac6d3;
+	}
+
+	&--warn {
+		color: #4c4a42;
+		background-color: #fff9ea;
+		border-color: #dfd8c2;
+	}
+
+	&--error {
+		color: #911;
+		background-color: #fcdede;
+		border-color: #d2b2b2;
+	}
+}

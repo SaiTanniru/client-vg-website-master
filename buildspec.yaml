@@ -1,0 +1,59 @@
+version: 0.2
+
+env:
+  shell: bash
+  variables:
+      # The name of the AWS lambda function
+      AWS_LAMBDA_FUNC_NAME: "client-vg-website"
+phases:
+  install:
+    #If you use the Ubuntu standard image 2.0 or later, you must specify runtime-versions.
+    #If you specify runtime-versions and use an image other than Ubuntu standard image 2.0, the build fails.
+    runtime-versions:
+      nodejs: 14.x
+      # name: version
+      python: 3.x
+    #commands:
+      # - command
+  pre_build:
+    commands:
+      - |-
+          if [ "$AWS_LAMBDA_FUNC_NAME" = "" ]; then
+            echo "AWS_LAMBDA_FUN_NAME must be specified";
+            exit 1;
+          fi
+      - |-
+        TMP_ACCOUNT=`echo $CODEBUILD_BUILD_ARN | cut -d':' -f 5`
+        NOTIFY_JSON='{"name":"'"$AWS_LAMBDA_FUNC_NAME"'","number":'"$CODEBUILD_BUILD_NUMBER"','\
+        '"log":"'"$CODEBUILD_LOG_PATH"'","region":"'"$AWS_DEFAULT_REGION"'",'\
+        '"account":"'"$TMP_ACCOUNT"'",'\
+        '"message":"%s","status":"%s"}'
+  build:
+    commands:
+      - npm run dist
+  post_build:
+    commands:
+      - |-
+          if [ "$CODEBUILD_BUILD_SUCCEEDING" != "1" ]; then
+            TMP_JSON_STR=`printf $NOTIFY_JSON "Failed to build" "FAILED"`
+            aws lambda invoke --function-name build-notify \
+                --cli-binary-format raw-in-base64-out \
+                --payload "$TMP_JSON_STR" /dev/stdout
+            exit 1;
+          fi
+      # Save the build to S3 and trigger a deploy
+      - |-
+          S3KEY=$AWS_LAMBDA_FUNC_NAME/$CODEBUILD_BUILD_NUMBER.dist.zip
+          aws s3api put-object --bucket client-build \
+            --key $S3KEY \
+            --body ${CODEBUILD_SRC_DIR}/dist.zip
+          aws lambda invoke --function-name build-deploy \
+            --invocation-type Event \
+            --cli-binary-format raw-in-base64-out \
+            --payload "{\"func\": \"$AWS_LAMBDA_FUNC_NAME\",\"build\":\"$CODEBUILD_BUILD_NUMBER\",\"s3Key\":\"$S3KEY\",\"alias\":\"$DEPLOY_ALIAS\"}" \
+            /dev/stdout
+          TMP_JSON_STR=`printf $NOTIFY_JSON "Triggering branch $DEPLOY_ALIAS" "SUCCEEDED"`
+          aws lambda invoke --function-name build-notify \
+            --cli-binary-format raw-in-base64-out \
+            --payload "$TMP_JSON_STR" /dev/stdout
+

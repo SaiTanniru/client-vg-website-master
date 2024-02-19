@@ -1,0 +1,113 @@
+@import '../../variables';
+
+.JoinOurTeam {
+  background-color: #A0A0A0;
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  padding: $gutter 0;
+  display: flex;
+  justify-content: center;
+  flex-grow: 1;
+
+  &_wrap {
+    width: $screen-medium;
+    background: #fff;
+    font-size: 16px;
+    display: flex;
+    align-self: center;
+
+    @media (max-width: $screen-small) {
+      flex-direction: column;
+    }
+  }
+
+  &_body {
+    padding: $gutter;
+
+    &.left {
+      flex: 1;
+    }
+
+    &.right {
+      flex: 0.8;
+    }
+
+    &.with_background {
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+  }
+
+  &_text {
+    line-height: 1.4;
+    color: white;
+    padding: 20px 15px;
+    text-align: justify;
+    text-align-last: center;
+    font-size: 18px;
+
+    &.bold {
+      font-family: $font-family-bold;
+      font-weight: bold;
+      padding: 0;
+    }
+  }
+
+  &_upload {
+    display: flex;
+    font-size: 16px;
+    color: #bababa;
+    margin-bottom: 1rem;
+  }
+
+  &_button {
+    color: white;
+    font-size: 16px;
+    background-color: #bababa;
+    padding: 1px 15px;
+    margin: 0 15px;
+    cursor: pointer;
+  }
+
+  &_uploaded_message {
+    font-size: 14px;
+    color: $color-gray-4;
+    margin-bottom: 1rem;
+
+    &.row {
+      display: flex;
+    }
+
+  }
+
+  &_uploaded_file_delete {
+    margin-left: 10px;
+    width: 25px;
+    height: 25px;
+    background-size: contain;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  input, textarea {
+    border: none;
+    border-radius: 0;
+    width: 100%;
+    margin-bottom: 1rem;
+    padding: 0.2em 0;
+    font-size: 16px;
+  }
+
+  input {
+    border-bottom: 1px solid $color-gray-4;
+  }
+
+  button {
+    width: 100%;
+    font-size: 16px;
+  }
+}

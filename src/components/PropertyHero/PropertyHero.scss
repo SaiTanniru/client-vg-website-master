@@ -1,0 +1,64 @@
+@import '../../variables';
+
+.PropertyHero {
+	margin: 0 auto;
+	max-width: 1100px;
+	padding: $gutter;
+	background: #fff;
+	display: flex;
+
+	&_btn {
+		@include button;
+		margin-bottom: 1rem;
+		width: 215px;
+		cursor: pointer;
+	}
+
+	&_media {
+		flex: 1;
+
+		&_video {
+			margin-top: 1rem;
+		}
+	}
+
+	&_info {
+		width: 350px;
+		font-size: 17px;
+	}
+
+	&_status {
+		margin-bottom: 1rem;
+
+		&--active, &--in-negotiation, &--under-contract {
+			color: $color-green;
+		}
+	}
+
+	&_contact {
+		color: $color-green;
+		margin-bottom: 1rem;
+		border-bottom: 2px solid $color-gray-3;
+		padding-bottom: 0.2rem;
+	}
+
+	@media (max-width: $screen-small) {
+		flex-direction: column;
+
+		&_media {
+			margin-bottom: $gutter;
+		}
+
+		&_info {
+			width: 100%;
+		}
+	}
+
+	@media (min-width: $screen-small+1) {
+		&_info {
+			padding-left: $gutter;
+			border-left: 2px solid $color-green;
+			margin-left: $gutter;
+		}
+	}
+}

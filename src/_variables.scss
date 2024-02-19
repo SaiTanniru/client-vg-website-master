@@ -1,0 +1,179 @@
+@font-face {
+    font-family: 'GothamBook';
+    src: url('/fonts/GothamBook.eot');
+    src: url('/fonts/GothamBook.eot') format('embedded-opentype'),
+         url('/fonts/GothamBook.woff2') format('woff2'),
+         url('/fonts/GothamBook.woff') format('woff'),
+         url('/fonts/GothamBook.ttf') format('truetype'),
+         url('/fonts/GothamBook.svg#GothamBook') format('svg');
+}
+
+@font-face {
+	font-family: 'GothamMedium';
+	src: url('/fonts/GothamMedium.otf') format('opentype');
+}
+
+@font-face {
+	font-family: 'GothamBold';
+	src: url('/fonts/GothamBold.otf') format('opentype');
+}
+
+@font-face {
+	font-family: "Flood Std"; 
+	src: url('/fonts/FloodStd.otf') format('opentype');
+}
+
+// type
+$fs-small: 13px;
+
+// color
+$color-gray-0: darken(#fff, 2%);
+$color-gray-1: darken(#fff, 5%);
+$color-gray-2: darken(#fff, 9%);
+$color-gray-3: darken(#fff, 13%);
+$color-gray-4: darken(#fff, 21%);
+$color-gray-5: darken(#fff, 30%);
+$color-gray-6: darken(#fff, 42%);
+$color-gray-7: darken(#fff, 60%);
+$color-gray-8: darken(#fff, 75%);
+$color-gray-9: darken(#fff, 85%);
+$color-red: #C62027;
+$color-green: #8FC741;
+$color-blue: #009BE1;
+$color-text: #333;
+$color-link: $color-blue;
+$color-mute: $color-gray-5;
+$color-border: $color-gray-2;
+$color-brand-gray: #202124;
+
+// font
+$font-family-default: "GothamBook", Arial, Lucida Grande, sans-serif;
+$font-family-medium: "GothamMedium", Arial, Lucida Grande, sans-serif;
+$font-family-bold: "GothamBold", Arial, Lucida Grande, sans-serif;
+$font-flood: "Flood Std", Arial, Lucida Grande, sans-serif;
+
+// z-index master list
+$z-sticky: 1000;
+$z-login: 1100;
+$z-drop: 1200;
+
+// misc
+$margin-xsmall: 10px;
+$margin-small: 15px;
+$margin-medium: 20px;
+$margin-block:	30px;
+$margin-big: 40px;
+$gutter: 2rem;
+$border-radius: 4px;
+
+// screen sizes
+$screen-min-width: 294px;
+$screen-xsmall:	480px;
+$screen-small:	768px;
+$screen-medium:	992px;
+$screen-large:	1240px;
+
+// header
+$header-height: 68px;
+$header-height-big: 98px;
+
+// slider
+$arrow-height: 70px;
+$arrow-height-medium: 50px;
+$arrow-height-small: 40px;
+
+@mixin column-width($col, $gap) {
+	width: calc((100% / #{$col}) - ((#{$gap} * (#{$col} - 1)) / #{$col}));
+}
+
+@mixin h1 {
+	font-size: 36px;
+	line-height: 1.2;
+
+	@media (max-width: $screen-medium) {
+		font-size: 28px
+	}
+}
+
+@mixin h2 {
+	font-size: 24px;
+	line-height: 1.2;
+	
+	@media (max-width: $screen-medium) {
+		font-size: 20px
+	}
+}
+
+@mixin h3 {
+	font-size: 22px;
+	line-height: 1.2;
+	
+	@media (max-width: $screen-medium) {
+		font-size: 17px
+	}
+}
+
+@mixin h4 {
+	font-size: 16px;
+	line-height: 1.2;
+	
+	@media (max-width: $screen-medium) {
+		font-size: 14px
+	}
+}
+
+@mixin default-font-size {
+	font-size: 15px;
+
+	@media (max-width: $screen-medium) {
+		font-size: 13px
+	}
+}
+
+@mixin button {
+	display: inline-block;
+	white-space: nowrap;
+	vertical-align: middle;
+	user-select: none;
+	text-align: center;
+	color: #fff;
+	background-color: $color-green;
+	padding: 0.5em 1.5em 0.3em;
+	border: none;
+	border-bottom: 3px solid rgba(0,0,0,0.05);
+}
+
+@mixin container {
+	margin: 0 auto;
+	max-width: $screen-medium;
+	width: 100%;
+}
+
+@mixin big-container {
+	margin: 0 auto;
+	max-width: $screen-large;
+	width: 100%;
+}
+
+@mixin small-container {
+	margin: 0 auto;
+	max-width: $screen-small;
+	width: 100%;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+fieldset {
+	margin: 0;
+	border: none;
+}
+
+.preload-image {
+	position: absolute;
+	width: 0;
+	height: 0;
+	z-index: -1000;
+	visibility: hidden;
+}

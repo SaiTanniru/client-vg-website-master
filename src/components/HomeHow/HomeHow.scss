@@ -1,0 +1,48 @@
+@import '../../variables';
+
+.HomeHow {
+	background-color: $color-green;
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: contain;
+	color: #fff;
+	display: flex;
+	align-items: center;
+
+	&_item {
+		@include h2;
+		text-transform: uppercase;
+		padding: 6rem 3rem;
+		text-align: center;
+
+		&_normal {
+			text-transform: none;
+		}
+	}
+
+	&_button {
+		@include button;
+		@include h3;
+		padding: 0.8rem 1.5rem;
+		text-transform: uppercase;
+		margin: $gutter auto 0;
+		background-color: #000;
+		color: #fff;
+	}
+
+	@media (max-width: $screen-medium) {
+		&_item {
+			padding: 3rem;
+		}
+	}
+
+	@media (max-width: $screen-small) {
+		&_item {
+			font-size: 16px;
+		}
+	}
+
+	@media (min-width: $screen-small) {
+		min-height: 100vh;
+	}
+}

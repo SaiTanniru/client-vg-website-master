@@ -1,0 +1,97 @@
+@import '../../variables';
+
+.Hero {
+	background-color: #A0A0A0;
+	background-position: top center;
+	background-repeat: no-repeat;
+	background-size: 100% auto;
+	color: #fff;
+	display: flex;
+	flex-direction: column;
+	min-height: calc(100vh - 60px);
+
+	&_slides {
+		flex-grow: 1;
+		display: flex;
+		align-items: center;
+		position: relative;
+	}
+
+	&_item {
+		@include h2;
+		text-transform: uppercase;
+		padding: 4rem 3rem 2.5rem;
+		text-align: center;
+
+		&_lowercase {
+			text-transform: lowercase !important;
+		}
+	}
+
+	&_medium_font {
+		font-size: 18px;
+	}
+
+	small {
+		@include default-font-size;
+	}
+
+	&_button {
+		@include button;
+		@include h3;
+		padding: 0.8rem 1.5rem;
+		text-transform: uppercase;
+		margin: $gutter auto 0;
+	}
+
+	&_team {
+		align-self: center;
+		width: 100%;
+
+		&_img {
+			padding-top: calc(665 / 1700 * 100%);
+			background-position: bottom center;
+			background-repeat: no-repeat;
+			background-size: cover;
+		}
+	}
+
+	&_corner_right {
+		display: flex;
+		flex-direction: column;
+		position: absolute;
+		top: 10px;
+		right: 30px;
+		z-index: 2;
+		text-align: center;
+		
+		.Hero_button {
+			cursor: pointer;
+		}
+
+		.Hero_error {
+			color: red;
+			margin-top: 10px;
+		}
+
+		.hidden {
+			display: none;
+		}
+	}
+
+	@media (max-width: $screen-medium) {
+		min-height: calc(100vh - 98px);
+	}
+
+	@media (max-width: 500px) {
+		min-height: calc(100vh - 98px - 30px);
+
+		&_team {
+			&_img {
+				padding-top: calc(665 / 1140 * 100%);
+				background-size: 166%;
+				background-position: 52% 100%;
+			}
+		}
+	}
+}

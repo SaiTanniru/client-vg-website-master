@@ -1,0 +1,32 @@
+@import '../../variables';
+
+.PropertyHead {
+	display: flex;
+
+	&_body {
+		flex: 1;
+
+		&_name {
+			@include h2;
+			margin-bottom: 0.3rem;
+		}
+
+		&_address {
+			margin-bottom: 1rem;
+		}
+	}
+	&_map {
+		flex-shrink: 0;
+		text-align: center;
+		font-size: $fs-small;
+		display: block;
+		margin-left: 1rem;
+
+		&_icon {
+			@include h1;
+			display: block;
+			margin-bottom: 0;
+			line-height: 1;
+		}
+	}
+}

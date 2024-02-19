@@ -1,0 +1,41 @@
+@import '../../variables';
+
+.Editor {
+	display: flex;
+	z-index: $z-sticky;
+	background: rgba(244, 244, 244, 0.94);
+	width: 100%;
+	align-items: center;
+	top: 0;
+	position: sticky;
+	margin-bottom: 10px;
+	font-weight: normal;
+	color: $color-gray-6;
+	line-height: 1.4;
+	flex-wrap: wrap;
+
+	&_btn {
+		padding: 9px 12px;
+		text-align: center;
+		font-weight: bold;
+		font-size: 12px;
+		white-space: nowrap;
+		cursor: pointer;
+		background: $color-gray-1;
+		color: $color-text;
+		border: none;
+
+		&.active {
+			color: $color-link;
+		}
+
+		&:hover, &:focus {
+			color: #000;
+			background-color: $color-gray-3;
+		}
+
+		&:last-child {
+			margin-left: auto;
+		}
+	}
+}

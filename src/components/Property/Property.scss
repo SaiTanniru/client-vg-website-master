@@ -1,0 +1,132 @@
+@import '../../variables';
+
+.Property {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	
+	&_head {
+		background: #DADADA;
+		padding: $gutter 0;
+
+		&_back {
+			max-width: 1100px;
+			padding: 0 $gutter;
+			margin: 0 auto 0.5rem;
+
+			a {
+				display: flex;
+				align-items: center;
+			}
+
+			&_icon {
+				margin-right: 0.5rem;
+			}
+		}
+	}
+
+	&_detail {
+		padding: $gutter 0;
+
+		&_block {
+			margin: 0 auto;
+			max-width: $screen-medium;
+			padding: $gutter;
+
+			li:not(:first-child) {
+				margin-top: 0.5rem;
+			}
+		}
+	}
+	.download-package-form, .end-container {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+
+		.phone-number-error {
+			text-align: left;
+			color: orangered;
+			font-size: 13px;
+		}
+
+		.first-last-name-error {
+			text-align: left;
+			color: orangered;
+			font-size: 13px;
+		}
+
+		.download-package-button {
+			cursor: pointer;
+			margin: 10px;
+			width: 100px;
+			height: 38px;
+		}
+
+		.download-package-message {
+			margin-bottom: 20px;
+		}
+	}
+
+	.download-package-form {
+		.download-package-input {
+			margin-bottom: 10px;
+			width: 100%;
+
+			&:last-of-type {
+				margin-bottom: 5px;
+			}
+
+			&:focus {
+				border-color: $color-border;
+			}
+		}
+
+		.buttons-container {
+			display: flex;
+			justify-content: center;
+
+			button {
+				margin: 10px 10px 0;
+			}
+		}
+
+		.download-package-checkbox-container {
+			display: flex;
+			justify-content: flex-start;
+			margin: 0 0 10px;
+			padding: 0;
+			font-size: 16px;
+			max-width: 40em;
+
+			@media (max-width: $screen-small) {
+				font-size: 13px;
+			}
+
+			.download-package-checkbox-item {
+				display: flex;
+				align-items: center;
+
+				input {
+					cursor: pointer;
+					margin-right: 0.4em;
+				}
+
+				.download-package-checkbox-name {
+					flex-grow: 1;
+					display: block;
+					white-space: nowrap;
+					color: $color-text;
+					margin-right: 15px;
+
+					&.is-active {
+						color: $color-green;
+					}
+				}
+			}
+		}
+	}
+
+	.end-container {
+		align-items: center;
+	}
+}

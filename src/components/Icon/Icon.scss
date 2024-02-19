@@ -1,0 +1,16 @@
+.Icon {
+	display: inline-flex;
+
+	svg {
+		// Specifying both width and height (instead of just height), since IE and Edge do not support SVG scaling. 
+		// I'm assuming a 1x1 aspect ratio here, which all of our SVGs currently are.
+		// Canvas method could be used for scaling various aspect ratios after IE10 support is dropped: 
+		// http://nicolasgallagher.com/canvas-fix-svg-scaling-in-internet-explorer
+		height: 1em;
+		width: 1em;
+		align-self: center;
+		fill: currentColor;
+		user-select: none;
+		pointer-events: none;
+	}
+}

@@ -1,0 +1,39 @@
+@import '../../variables';
+
+.ListSort {
+	max-width: 800px;
+	border-top: 2px solid $color-green;
+	margin: 0 auto;
+	justify-content: center;
+	display: flex;
+	flex-wrap: wrap;
+
+	&_item {
+		margin-top: 1rem;
+
+		&_field {
+			display: flex;
+			align-items: center;
+			border: 1px solid $color-border;
+			padding: 2px 8px;
+			border-radius: $border-radius;
+			max-width: 8em;
+			color: $color-mute;
+
+			&:focus-within {
+				border-color: #51a7e8;
+			}
+
+			input {
+				margin-left: 0.25em;
+				padding: 0;
+				border: none;
+				flex-grow: 1;
+			}
+		}
+	}
+
+	&_item:not(:first-child) {
+		margin-left: 1rem;
+	}
+}

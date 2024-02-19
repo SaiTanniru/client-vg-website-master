@@ -1,0 +1,340 @@
+@import "../../variables";
+
+.ListingStats {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+
+  .listings-slider-img {
+    width: 100vw;
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .listing-stats-container {
+    width: calc(100% - 2 * (#{$arrow-height} + 2 * #{$margin-xsmall}));
+    position: absolute;
+    z-index: 2;
+    margin-top: 150px;
+
+    .property-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      color: white;
+      font-size: 28px;
+      font-family: $font-family-medium;
+      letter-spacing: 0.8px;
+      margin-bottom: 100px;
+
+      .property-logo {
+        width: 290px;
+        height: 130px;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+        margin-top: $margin-xsmall;
+      }
+
+      .strive-logo-large{
+        width: 400px;
+      }
+
+      .property-annotation {
+        font-size: 52px;
+        font-family: $font-flood;
+        color: $color-green;
+      }
+    }
+
+    .all-stats-container {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+
+      @-webkit-keyframes fadeIn{
+        0% { opacity: 0;}
+        100%{ opacity: 1;}
+      }
+      .stats-container {
+        position: relative;
+        display: flex;
+        align-items: center;
+       
+        &.states-animation{
+          animation: fadeIn 2s;
+          animation-iteration-count: 2;
+        }
+        &.bigger {
+          transform: scale(1.2);
+          margin: 0 $margin-block 0 $margin-big;
+        }
+
+        .stats-hexagon {
+          position: relative;
+          z-index: 4;
+          width: 180px;
+          height: 180px;
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size: contain;
+
+          .stats-status {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 3;
+            color: #494646;
+            font-size: 21px;
+            text-transform: uppercase;
+            font-family: $font-family-medium;
+            text-align: center;
+            line-height: 1.1;
+            letter-spacing: 0;
+
+            &.bigger {
+              font-family: $font-family-bold;
+              font-size: 34px;
+              line-height: 1;
+            }
+          }
+        }
+
+        .stats-numbers {
+          position: relative;
+          z-index: 3;
+          width: 320px;
+          height: 100px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          font-family: $font-family-medium;
+          text-transform: uppercase;
+          color: white;
+          border: 1px solid white;
+          border-radius: 10px;
+          padding: 0 $margin-small 0 50px;
+          transform: translate(-42px, 0);
+          margin: 0 5px;
+
+          .stats-background {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            border-radius: 10px;
+            background-color: #454546;
+            opacity: 0.6;
+          }
+
+          .stats-count {
+            width: 100%;
+            text-align: center;
+            border-bottom: 1px solid white;
+            font-size: 20px;
+          }
+
+          .stats-price {
+            color: $color-green;
+            font-size: 22px;
+          }
+        }
+      }
+    }
+
+    .strive-logo {
+      float: right;
+      width: 220px;
+      height: 50px;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      margin-top: 150px;
+    }
+  }
+
+  @media (max-width: 1700px) {
+    .listing-stats-container {
+      margin-top: 100px;
+
+      .property-container {
+        .property-text {
+          font-size: 22px;
+        }
+
+        .property-logo {
+          width: 230px;
+          height: 98px;
+        }
+
+        .strive-logo-large{
+          width: 320px;
+        }
+
+        .property-annotation {
+          font-size: 45px;
+          text-align: center;
+        }
+      }
+
+      .all-stats-container {
+        margin-left: $margin-medium;
+
+        .stats-container {
+          &.bigger {
+            margin: 0 0 0 $margin-small;
+          }
+
+          .stats-hexagon {
+            width: 140px;
+            height: 140px;
+
+            .stats-status {
+              font-size: 17px;
+
+              &.bigger {
+                font-size: 26px;
+              }
+            }
+          }
+
+          .stats-numbers {
+            width: 250px;
+            height: 80px;
+
+            .stats-count {
+              font-size: 16px;
+            }
+
+            .stats-price {
+              font-size: 18px;
+            }
+          }
+        }
+      }
+
+      .strive-logo {
+        width: 180px;
+        height: 30px;
+        margin-top: 130px;
+      }
+    }
+  }
+
+  @media (max-width: $screen-large) {
+    .listing-stats-container {
+
+      .property-container {
+        .property-text {
+          font-size: 18px;
+        }
+
+        .property-logo {
+          width: 180px;
+          height: 78px;
+        }
+
+        .strive-logo-large{
+          width: 270px;
+        }
+      }
+
+      .all-stats-container {
+        .stats-container {
+          .stats-hexagon {
+            width: 100px;
+            height: 100px;
+
+            .stats-status {
+              font-size: 12px;
+
+              &.bigger {
+                font-size: 20px;
+              }
+            }
+          }
+
+          .stats-numbers {
+            width: 190px;
+            height: 64px;
+            padding: 0 $margin-xsmall 0 45px;
+
+            .stats-count {
+              font-size: 11px;
+            }
+
+            .stats-price {
+              font-size: 13px;
+            }
+          }
+        }
+      }
+
+      .strive-logo {
+        width: 140px;
+        height: 25px;
+      }
+    }
+  }
+
+  @media (max-width: $screen-medium) {
+    .listing-stats-container {
+      width: calc(100% - 2 * #{$arrow-height-medium});
+      margin-top: $margin-big;
+
+      .property-container {
+        margin-bottom: $margin-xsmall;
+
+        .property-text {
+          font-size: 14px;
+        }
+
+        .property-annotation {
+          font-size: 24px;
+          text-align: center;
+        }
+
+        .property-logo {
+          width: 160px;
+          height: 68px;
+        }
+
+        .strive-logo-large{
+          width: 220px;
+        }
+      }
+
+      .all-stats-container {
+        flex-direction: column;
+        align-items: center;
+
+        .stats-container {
+          margin: 25px 0;
+
+          .stats-hexagon {
+            .stats-status.bigger {
+              font-family: $font-family-medium;
+            }
+          }
+        }
+      }
+
+      .strive-logo {
+        width: 100px;
+        height: 20px;
+        margin-top: $margin-medium;
+      }
+    }
+  }
+
+  .no-margin{
+    margin-top: 0px;
+  }
+}

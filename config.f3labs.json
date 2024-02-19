@@ -1,0 +1,9 @@
+{
+	"path": {
+		"base": "/",
+		"media": "https://dj4ao97lyirny.cloudfront.net/arcfusion/skydata/arc11a015/media/apps/arcimedes/v0/",
+		"legacyMedia": "https://s3-us-west-1.amazonaws.com/arcfusion-env-01-open/arcfusion/skydata/arc11a015/media/apps/arcimedes/v0/",
+		"api": "https://api-arc11a015.skyrin.com/services/"
+	},
+	"port": 80
+}

@@ -1,0 +1,11 @@
+@import '../../variables';
+
+.Subscribe {
+	background: $color-brand-gray;
+	padding: 2rem 0 0;
+
+	&_wrap {
+		margin: 0 auto;
+		max-width: $screen-xsmall;
+	}
+}
